@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css">
+    <title>Shorten Link</title>
+  </head>
+  <body>
+    <div class="main-container">
+      <div class="header-container">
+        <div>
+          <h1>Shorten Your Link</h1>
+        </div>
+      </div>
+      <div class="input">
+        <h3 class="notvalidurl hide">Not A Valid Url</h3>
+        <div class="input__form">
+          <input id="url" class="input__userUrl" type="url" name="url" placeholder=" Url you want to shorten" size="30" required>
+          <input class="input__button" type='submit' value="Shorten" id='btn'>
+        </div>
+        <div class="loading hide">
+            <H3 class="loading__text">loading</H3>
+        </div>
+        <!-- when ready for prod add hide as class -->
+        <div class="input__link__info hide"> 
+          <div class="input__link__data">
+            <h4>Shorten Link</h4>
+            <a id="shortenLinkA" href="#"><p class="input__link__data__shortlink" id="shortenLinkP">Place Holder</p></a>
+          </div>
+          <div class="input__link__data">
+            <h4>Share Link</h3>
+            <a id="shareLinkA" href="#"><p class="input__link__data__sharelink" id="shareLinkP">PlaceHolder</p></a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script type="text/javascript" src="./app.js"></script>
+  </body>
+</html>
