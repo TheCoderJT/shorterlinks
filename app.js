@@ -3,10 +3,6 @@ const btn = document.getElementById("btn");
 const inputContainer = document.querySelector(".input");
 let userInput = "";
 let shortLink = `https://api.shrtco.de/v2/shorten?url=${userInput}`;
-const shareLinkP = document.getElementById("shareLinkP");
-const shareLinkA = document.getElementById("shortenLinkP");
-const shortLinkA = document.getElementById("shortenLinkA");
-const shortLinkP = document.getElementById("shortenLinkP");
 const infoHero = document.querySelector(".input__link__info");
 const loading = document.querySelector(".loading");
 const notAUrl = document.querySelector(".notvalidurl");
@@ -44,13 +40,16 @@ const fetchAPI = async (url) => {
   }
 };
 
+const ogLinkP = document.getElementById("originalLinkP");
+const ogLinkA = document.getElementById("originalLinkA");
+const shortLinkP = document.getElementById("shortLinkP");
+const shortLinkA = document.getElementById("shortLinkA");
+
 const setText = async (data) => {
-  shareLinkP.innerText = await data.result.share_link;
-  shareLinkA.setAttribute("href", await data.result.share_link);
-  shareLinkA.pathname = await data.result.share_link;
+  ogLinkP.innerText = await data.result.original_link;
+  ogLinkA.setAttribute("href", await data.result.original_link);
   shortLinkP.innerText = await data.result.short_link;
-  shortLinkA.setAttribute("href", await data.result.short_link);
-  shortLinkA.pathname = await data.result.short_link;
+  shortLinkA.setAttribute("href", await data.result.full_short_link);
 };
 
 function isValidURL(string) {
